@@ -1,0 +1,127 @@
+@charset "utf-8";
+
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+:root {
+    --font-contenido: "Poiret One", "Roboto Condensed", Arial;
+    --font-titulo: "Fredericka the Great", Helvetica;
+    --font-size-min: 1rem;
+    --font-size-max: 1.5rem;
+    --h1-size-min: 2.5rem;
+    --h1-size-max: 3.5rem;
+    --h2-size-min: 2rem;
+    --h2-size-max: 3rem;
+    --h3-size-min: 1.5rem;
+    --h3-size-max: 2.5rem;
+    --min-padding: 0.5rem;
+    --max-padding: 1.5rem;
+    --min-margin: 0.5rem;
+    --max-margin: 2rem;
+}
+
+body {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url(../imgs/fondo.jpg) no-repeat center / cover;
+    font-family: var(--font-contenido);
+    color: whitesmoke;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-titulo);
+    font-weight: 400;
+}
+
+h1 {
+    font-size: clamp(var(--h1-size-min), 36.80px + 1.000vw, var(--h1-size-max));
+    text-align: left;
+}
+
+h2 {
+    font-size: clamp(var(--h2-size-min), 28.80px + 1.000vw, var(--h2-size-max));
+}
+
+h3 {
+    font-size: clamp(var(--h3-size-min), 20.80px + 1.000vw, var(--h3-size-max));
+}
+
+header {
+    height: 30vh;
+    background: linear-gradient(90deg, #050505, #363636, #808080);
+    color: whitesmoke;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: left;
+}
+
+header div {
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+header div h1 {
+    order: 1;
+    padding: 1rem;
+}
+
+header div figure {
+    order: 0;
+    height: 60%;
+}
+
+header figure img {
+    height: 100%;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    padding-inline: 1rem;
+}
+
+#libros {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 425px));
+    /* grid-template-rows:  */
+    justify-content: center;
+    justify-items: center;
+    gap: 1rem;
+}
+
+#libros .card-libro {
+    background-color: rgba(230, 230, 230, .3);
+    width: 95%;
+    padding: .5rem;
+    border-radius: 5px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+
+#libros .card-libro button {
+    width: 90%;
+    padding: .5rem;
+    border-radius: 10vh;
+    border: none;
+    background-color: rgb(62, 62, 179);
+    color: white;
+}
+
+@media (min-width:1024px) {
+    nav ul li {
+        display: inline;
+    }
+}
