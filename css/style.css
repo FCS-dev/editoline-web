@@ -1,6 +1,8 @@
 @charset "utf-8";
 
-*, *::after, *::before {
+*,
+*::after,
+*::before {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -9,7 +11,7 @@
 
 :root {
     --font-contenido: "Poiret One", "Roboto Condensed", Arial;
-    --font-titulo: "Fredericka the Great", Helvetica;
+    --font-titulo: "Prata", "Fredericka the Great", Helvetica;
     --font-size-min: 1rem;
     --font-size-max: 1.5rem;
     --h1-size-min: 2.5rem;
@@ -25,20 +27,24 @@
 }
 
 body {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-        url(../imgs/fondo.jpg) no-repeat center / cover;
+    background-color: #f3f3ed;
+    /* background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url(../imgs/fondo.jpg) no-repeat center / cover; */
     font-family: var(--font-contenido);
-    color: whitesmoke;
+    color: #555555;
+    font-weight: 800;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     font-family: var(--font-titulo);
     font-weight: 400;
 }
 
 h1 {
     font-size: clamp(var(--h1-size-min), 36.80px + 1.000vw, var(--h1-size-max));
-    text-align: left;
+    text-align: right;
 }
 
 h2 {
@@ -50,20 +56,23 @@ h3 {
 }
 
 header {
-    height: 30vh;
-    background: linear-gradient(90deg, #050505, #363636, #808080);
-    color: whitesmoke;
+    /* height: 30vh; */
+    /* background: linear-gradient(90deg, #050505, #363636, #808080); */
+
+    /* color: #757575; */
     padding: 1rem;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: left;
+    gap: 2rem;
 }
 
 header div {
     height: 100px;
     display: flex;
-    flex-direction: row;
+    flex-direction: row-reverse;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -81,12 +90,25 @@ header figure img {
     height: 100%;
 }
 
+main h2 {
+    padding: 1rem .5rem;
+}
+
 nav ul {
     list-style: none;
+    border-top: 1px solid #757575;
+    border-bottom: 1px solid #757575;
+    /* text-transform: uppercase; */
 }
 
 nav ul li {
-    padding-inline: 1rem;
+    padding: .5rem 1rem;
+    font-size: 1.2rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: inherit;
 }
 
 #libros {
@@ -95,13 +117,15 @@ nav ul li {
     /* grid-template-rows:  */
     justify-content: center;
     justify-items: center;
-    gap: 1rem;
+    gap: 2rem;
 }
 
 #libros .card-libro {
-    background-color: rgba(230, 230, 230, .3);
+    /* background-color: #BABDE2; */
+
+    background-color: #fff;
     width: 95%;
-    padding: .5rem;
+    padding: 1rem .5rem;
     border-radius: 5px;
     display: flex;
     flex-flow: column nowrap;
@@ -116,9 +140,11 @@ nav ul li {
     padding: .5rem;
     border-radius: 10vh;
     border: none;
-    background-color: rgb(62, 62, 179);
+    /* background-color: rgb(62, 62, 179); */
+    background-color: #E87A62;
     color: white;
 }
+
 
 @media (min-width:1024px) {
     nav ul li {
