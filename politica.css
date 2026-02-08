@@ -1,0 +1,43 @@
+.bloque{
+    display: block;
+}
+
+
+body[id="politica"]{
+    line-height: 1.5rem;
+}
+
+body[id="politica"] main h3, body[id="politica"] main h2{
+    text-align: center;
+    padding-top: 1rem;
+}
+
+body[id="politica"] main p, body[id="politica"] main address, .lista-prot, .lista-def{
+    padding: 2rem;
+    text-align: justify;
+}
+
+.lista-prot{
+    margin: 0 0 1rem 1.25rem;
+    list-style-type: disc;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    
+}
+
+.lista-prot li{
+    margin-bottom: 0.5rem;
+}
+
+.lista-def{
+    margin: 0 0 1rem 0;
+}
+
+.lista-def dt{
+    font-weight: 600;
+    margin-top: 0.75rem;
+}
+
+.lista-def dd{
+    margin: 0.25rem 0 0 1.25rem;
+}
