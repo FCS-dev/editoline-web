@@ -43,3 +43,4 @@ Editorial, web compuesta por 6 páginas.. + 1 por cada obra y 1 por cada autor..
   Datos: Autor, género de novela, prólogo (introducción).
 - Planificar el contenido y la realización del "readme.md"
 - **Importante**: todas las páginas deben tener al menos 1 link hacia otra, cada obra y cada autor deben tener su propia página...
+- Preparar mockup de páginas
