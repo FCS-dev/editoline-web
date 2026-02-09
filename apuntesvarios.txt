@@ -1,0 +1,16 @@
+Gama de colores
+#fbe4d8 #dfb6b2 #854f6c #522b6b #2b124c #190019
+
+Web para inspiracion
+https://demo.templatesjungle.com/booksaw/
+https://es.wix.com/website-template/view/html/2209?originUrl=https%3A%2F%2Fes.wix.com%2Fwebsite%2Ftemplates%3Fcriteria%3DTienda%2Bde%2Blibros&tpClick=view_button&esi=0fd9f9c6-b478-454c-9907-bb743aa63715
+
+Iconos de redes sociales
+https://simpleicons.org/?q=redes
+
+pdtes 08/02
+-----------
+:hover sobre nav
+:hover sobre buttons
+:hover sobre flex-card???
+Corregir el h1 cuando la pantalla esta entre 320px y 425px
