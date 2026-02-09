@@ -112,24 +112,24 @@ main+footer {
     padding-block: 2rem;
 }
 
-#index main>h2 {
+#index>main>h2 {
     padding: 1rem;
     display: none;
 }
 
-#index header nav ul {
+header nav ul {
     list-style: none;
     border-top: 1px solid #757575;
     border-bottom: 1px solid #757575;
     /* text-transform: uppercase; */
 }
 
-#index header nav ul li {
+header nav ul li {
     padding: .5rem 1rem;
     font-size: 1.2rem;
 }
 
-#index header nav ul li a {
+header nav ul li a {
     text-decoration: none;
     color: inherit;
 }
@@ -307,6 +307,63 @@ main+footer {
     transform: scale(1.1);
 }
 
+
+
+/* Politica.html */
+/* INCIO ------ */
+.bloque {
+    display: block;
+}
+
+
+/* body[id="politica"] p,
+body[id="politica"] address,
+body[id="politica"] main ul, 
+body[id="politica"] dl,*/
+body[id="politica"] :not(h2):not(h3) {
+    line-height: 1.5;
+}
+
+body[id="politica"] main h3, body[id="politica"] main h2 {
+    text-align: center;
+    padding: 1rem;
+}
+
+body[id="politica"] main p,
+body[id="politica"] main address,
+.lista-prot, .lista-def {
+    padding: 2rem;
+    text-align: justify;
+}
+
+.lista-prot {
+    margin: 0 0 1rem 1.25rem;
+    list-style-type: disc;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+
+}
+
+.lista-prot li {
+    margin-bottom: 0.5rem;
+}
+
+.lista-def {
+    margin: 0 0 1rem 0;
+}
+
+.lista-def dt {
+    font-weight: 600;
+    margin-top: 0.75rem;
+}
+
+.lista-def dd {
+    margin: 0.25rem 0 0 1.25rem;
+}
+
+/* Politica.html */
+/* FIN ------ */
+
 @media (min-width:425px) {
     #flex-header #flex-div {
         flex-direction: row;
@@ -315,7 +372,7 @@ main+footer {
 }
 
 @media (min-width:768px) {
-    #index header nav ul {
+    header nav ul {
         text-align: center;
     }
 
@@ -347,11 +404,11 @@ main+footer {
 }
 
 @media (min-width:1024px) {
-    #index header nav ul li {
+    header nav ul li {
         display: inline;
     }
 
-    #index header nav ul {
+    header nav ul {
         text-transform: uppercase;
         padding: 1rem;
     }
