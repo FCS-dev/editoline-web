@@ -6,7 +6,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-size: 16px;
+    font-size: clamp(--font-size-min, 16.71px + 0.402vw, --font-size-max);
 }
 
 :root {
@@ -14,28 +14,31 @@
     --font-titulo: "Prata", "Fredericka the Great", Helvetica;
     --font-size-min: 1rem;
     --font-size-max: 1.5rem;
-    --h1-size-min: 2.5rem;
-    --h1-size-max: 3.5rem;
-    --h2-size-min: 2rem;
-    --h2-size-max: 3rem;
-    --h3-size-min: 1.5rem;
-    --h3-size-max: 2.5rem;
+    --h1-size-min: 1rem;
+    --h1-size-max: 4rem;
+    --h2-size-min: 1rem;
+    --h2-size-max: 3.5rem;
+    --h3-size-min: 1rem;
+    --h3-size-max: 3rem;
     --min-padding: 0.5rem;
-    --max-padding: 1.5rem;
+    --max-padding: 2rem;
     --min-margin: 0.5rem;
-    --max-margin: 2rem;
+    --max-margin: 2.5rem;
+    --fondo1: #D3C3B9;
+    --fondo2: #A79E9C;
+    --fondo3: #B58863;
+    --btn-color: #3D4D55;
+    --color-font: #3D4D55;
+    --color--font2: whitesmoke;
 }
 
 body {
-    /* background-color: #f3f3ed; */
-    background-color: #d3c3b9;
-    /* background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-        url(../imgs/fondo.jpg) no-repeat center / cover; */
+    background-color: var(--fondo1);
     font-family: var(--font-contenido);
-    color: #555555;
-    font-weight: 900;
+    color: #3D4D55;
+    font-weight: 600;
     min-width: 320px;
-    max-width: 1920px;
+    max-width: 1980px;
     margin: 0 auto;
 }
 
@@ -43,20 +46,36 @@ h1,
 h2,
 h3 {
     font-family: var(--font-titulo);
-    font-weight: 500;
+    font-weight: bolder;
 }
 
 h1 {
-    font-size: clamp(var(--h1-size-min), 36.80px + 1.000vw, var(--h1-size-max));
+    font-size: clamp(var(--h1-size-min), 10.29px + 2.411vw, var(--h1-size-max));
     text-align: right;
 }
 
 h2 {
-    font-size: clamp(var(--h2-size-min), 28.80px + 1.000vw, var(--h2-size-max));
+    font-size: clamp(var(--h2-size-min), 11.57px + 2.009vw, var(--h2-size-max));
 }
 
 h3 {
-    font-size: clamp(var(--h3-size-min), 20.80px + 1.000vw, var(--h3-size-max));
+    font-size: clamp(var(--h3-size-min), 12.86px + 1.607vw, var(--h3-size-max));
+}
+
+button {
+    padding: .5rem;
+    border-radius: 10vh;
+    outline: none;
+    border: none;
+    background-color: var(--btn-color);
+    color: var(--color--font2);
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--color--font2);
+    color: var(--color-font);
+    /* border: 1px solid var(--btn-color); */
 }
 
 header+main,
@@ -68,7 +87,7 @@ main+footer {
 }
 
 #flex-header {
-    padding: 1rem;
+    padding: clamp(var(--min-padding), 3.86px + 1.607vw, var(--max-padding));
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -84,23 +103,15 @@ main+footer {
 }
 
 #flex-header #flex-div h1 {
-    /* order: 1; */
-    /* display: none; */
-    padding: 1rem;
+    padding: clamp(var(--min-padding), 5.14px + 1.205vw, var(--max-padding));
 }
 
 #flex-header #flex-div figure {
-    /* order: 0; */
     height: 5rem;
-    /* width: 100%;
-    text-align: center;
-    aspect-ratio: 1/1; */
 }
 
 #flex-header figure img {
     height: 100%;
-    /* object-fit: cover;
-    object-position: center; */
 }
 
 #recomendado {
@@ -114,19 +125,18 @@ main+footer {
 }
 
 #index>main>h2 {
-    padding: 1rem;
+    padding: clamp(var(--min-padding), 5.14px + 1.205vw, var(--max-padding));
     display: none;
 }
 
 header nav ul {
     list-style: none;
-    border-top: 1px solid #757575;
-    border-bottom: 1px solid #757575;
-    /* text-transform: uppercase; */
+    border-top: 1px solid var(--btn-color);
+    border-bottom: 1px solid var(--btn-color);
 }
 
 header nav ul li {
-    padding: .5rem 1rem;
+    padding: clamp(var(--min-padding), 5.14px + 1.205vw, var(--max-padding));
     font-size: 1.2rem;
 }
 
@@ -135,21 +145,13 @@ header nav ul li a {
     color: inherit;
 }
 
-/* section {
-    margin-bottom: 2rem;
-} */
-
 #recomendado>h2 {
     display: none;
 }
 
-#recomendado article {
-    /* position: relative; */
-}
-
 #recomendado article h3 {
-    color: whitesmoke;
-    text-shadow: 5px 5px 5px #555555;
+    color: var(--color--font2);
+    text-shadow: 5px 5px 5px var(--color-font);
     text-align: center;
     padding: 2rem;
 }
@@ -164,39 +166,27 @@ header nav ul li a {
 }
 
 #recomendado article div {
-    /* position: absolute; */
-    color: whitesmoke;
-    /* bottom: 0; */
-    padding: .5rem;
-    /* background-color: rgba(20, 20, 20, .5); */
+    color: var(--color--font2);
+    /* padding: .5rem; */
+    padding: clamp(var(--min-padding), 5.14px + 1.205vw, var(--max-padding));
     text-align: center;
     border-radius: 5px;
+
 }
 
 #recomendado article div p {
     text-align: left;
-    padding: .5rem;
+    line-height: 1.5;
 }
 
 #recomendado article div button {
-    width: 90%;
-    padding: .5rem;
-    border-radius: 10vh;
-    border: none;
-    background-color: #3D4D55;
-    color: whitesmoke;
+    width: 50%;
+    margin: 1rem;
 }
-
-/* #recomendado article::after {
-    content: "";
-    display: block;
-    clear: both;
-} */
 
 #grid-libros {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 425px));
-    /* grid-template-rows:  */
     justify-content: center;
     justify-items: center;
     gap: 2rem;
@@ -204,12 +194,8 @@ header nav ul li a {
 
 #grid-libros>h3 {
     grid-column: 1 / -1;
-    color: whitesmoke;
+    color: var(--color--font2);
     text-shadow: 5px 5px 5px #555555;
-}
-
-#grid-libros .flex-card-libro:nth-of-type(even) {
-    /* background-color: rgba(250, 250, 250, .05); */
 }
 
 #grid-libros .flex-card-libro:hover {
@@ -217,10 +203,6 @@ header nav ul li a {
 }
 
 #grid-libros .flex-card-libro {
-    /* background-color: #BABDE2; */
-    /* background-color: rgba(162, 116, 79, .5); */
-    /* background-color: rgba(200, 200, 200, .05); */
-    /* #B58863; */
     width: 95%;
     padding: 1rem .5rem;
     border-radius: 5px;
@@ -231,17 +213,10 @@ header nav ul li a {
     gap: 1rem;
 }
 
-#grid-libros .flex-card-libro h3 {
-    /* flex: 1; */
-    /* no funciona */
-}
-
 #grid-libros .flex-card-libro figure {
     width: 100%;
     aspect-ratio: 3 / 4;
-    /* aspect-ratio: 4 / 3; */
     flex: 1;
-    /* no funciona */
 }
 
 #grid-libros .flex-card-libro figure img {
@@ -251,20 +226,8 @@ header nav ul li a {
     object-position: center;
 }
 
-#grid-libros .flex-card-libro p {
-    /* flex: 1; */
-    /* no funciona */
-}
-
 #grid-libros .flex-card-libro button {
     width: 90%;
-    padding: .5rem;
-    border-radius: 10vh;
-    border: none;
-    /* background-color: rgb(62, 62, 179); */
-    /* background-color: #E87A62; */
-    background-color: #3D4D55;
-    color: whitesmoke;
 }
 
 #flex-footer {
@@ -283,8 +246,7 @@ header nav ul li a {
 }
 
 .social {
-    color: #555;
-    /* color del icono */
+    color: var(--btn-color);
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -292,23 +254,18 @@ header nav ul li a {
 
 .social svg {
     width: 1.5rem;
-    /* controla el tamaño */
     height: 1.5rem;
     fill: currentColor;
-    /* hereda el color */
     transition: color 0.2s ease, transform 0.2s ease;
 }
 
 .social:hover {
-    color: whitesmoke;
-    /* hover monocromático */
+    color: var(--color--font2);
 }
 
 .social:hover svg {
     transform: scale(1.1);
 }
-
-
 
 /* politica.html */
 /* INCIO ------ */
@@ -316,11 +273,6 @@ header nav ul li a {
     display: block;
 }
 
-
-/* body[id="politica"] p,
-body[id="politica"] address,
-body[id="politica"] main ul, 
-body[id="politica"] dl,*/
 body[id="politica"] :not(h2):not(h3) {
     line-height: 1.5;
 }
@@ -370,7 +322,7 @@ body[id="politica"] main address,
 /* autor.html */
 /* INCIO ------ */
 #grid-autores {
-    background-color: #B58863;
+    background-color: var(--fondo3);
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 425px));
     justify-content: center;
@@ -380,12 +332,9 @@ body[id="politica"] main address,
 
 #grid-autores h2 {
     grid-column: 1 / -1;
-    color: whitesmoke;
+    color: var(--color--font2);
     text-shadow: 5px 5px 5px #555555;
 }
-
-
-
 
 #grid-autores .flex-card-autor:hover {
     box-shadow: 5px 5px 10px 5px rgba(20, 20, 20, .3);
@@ -395,6 +344,7 @@ body[id="politica"] main address,
     width: 95%;
     padding: 1rem .5rem;
     border-radius: 5px;
+    background-color: rgba(220, 220, 220, .2);
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
@@ -417,9 +367,8 @@ body[id="politica"] main address,
 }
 
 #grid-autores .flex-card-autor figure {
-    width: 50%;
+    width: 80%;
     aspect-ratio: 2.5 / 3;
-    /* flex: 1; */
 }
 
 #grid-autores .flex-card-autor figure img {
@@ -430,14 +379,10 @@ body[id="politica"] main address,
 }
 
 #grid-autores .flex-card-autor button {
-    width: 90%;
-    padding: .5rem;
-    border-radius: 10vh;
-    border: none;
-    background-color: #3D4D55;
-    color: whitesmoke;
+    width: 50%;
 }
 
+/* FIN ------ */
 /* autor.html */
 /* inicio ----- */
 #autor section {
@@ -457,7 +402,7 @@ body[id="politica"] main address,
     object-position: top;
 }
 
-#autor h2 {
+#autor h2, #libro h2 {
     padding: 1rem;
 }
 
@@ -498,9 +443,30 @@ body[id="politica"] main address,
 
 /* fin ------ */
 
+/* daga-sin-nombre.html */
+/* inicio ------ */
+#libro>main {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+#libro>main figure {
+    /* width: 95%; */
+    text-align: center;
+}
+
+#libro>main div p {
+    line-height: 1.5;
+    padding: 1rem;
+}
+
+/* fin ------ */
 
 
-/* FIN ------ */
 @media (min-width:425px) {
     #flex-header #flex-div {
         flex-direction: row;
@@ -602,5 +568,9 @@ body[id="politica"] main address,
 
     #autor section:first-child figure img {
         object-position: fill;
+    }
+
+    #grid-autores .flex-card-autor figure {
+        width: 50%;
     }
 }
