@@ -61,6 +61,7 @@ h3 {
 
 header+main,
 main>h2+section,
+main>section,
 section+section,
 main+footer {
     box-shadow: inset 0 20px 30px -20px rgba(0, 0, 0, .8);
@@ -324,14 +325,16 @@ body[id="politica"] :not(h2):not(h3) {
     line-height: 1.5;
 }
 
-body[id="politica"] main h3, body[id="politica"] main h2 {
+body[id="politica"] main h3,
+body[id="politica"] main h2 {
     text-align: center;
     padding: 1rem;
 }
 
 body[id="politica"] main p,
 body[id="politica"] main address,
-.lista-prot, .lista-def {
+.lista-prot,
+.lista-def {
     padding: 2rem;
     text-align: justify;
 }
@@ -367,6 +370,7 @@ body[id="politica"] main address,
 /* autor.html */
 /* INCIO ------ */
 #grid-autores {
+    background-color: #B58863;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 425px));
     justify-content: center;
@@ -395,7 +399,7 @@ body[id="politica"] main address,
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
+    gap: 2rem;
 }
 
 #grid-autores .flex-card-autor div {
@@ -404,16 +408,24 @@ body[id="politica"] main address,
     gap: 1rem;
 }
 
+#grid-autores .flex-card-autor div h3 {
+    text-align: center;
+}
+
+#grid-autores .flex-card-autor div button {
+    align-self: center;
+}
+
 #grid-autores .flex-card-autor figure {
     width: 50%;
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 2.5 / 3;
     /* flex: 1; */
 }
 
 #grid-autores .flex-card-autor figure img {
     width: 100%;
     height: 100%;
-    object-fit: fill;
+    object-fit: cover;
     object-position: center;
 }
 
@@ -468,16 +480,23 @@ body[id="politica"] main address,
         clear: both;
     }
 
+    #grid-libros .flex-card-libro figure {
+        width: 75%;
+    }
+
     #grid-autores {
-        grid-template-columns: repeat(auto-fit, 800px);
+        grid-template-columns: repeat(auto-fit, 80vw);
     }
 
     #grid-autores .flex-card-autor {
         width: 100%;
         flex-flow: row nowrap;
+        gap: 3rem;
     }
 
-
+    #grid-autores .flex-card-autor div h3 {
+        text-align: left;
+    }
 }
 
 @media (min-width:1024px) {
@@ -491,6 +510,6 @@ body[id="politica"] main address,
     }
 
     #recomendado article {
-        width: 60%;
+        width: 50%;
     }
 }
