@@ -438,7 +438,65 @@ body[id="politica"] main address,
     color: whitesmoke;
 }
 
+/* autor.html */
+/* inicio ----- */
+#autor section {
+    padding-block: 2rem;
+}
 
+#autor section:first-child figure {
+    width: 100%;
+    height: 100vh;
+}
+
+
+#autor section:first-child figure img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+
+#autor h2 {
+    padding: 1rem;
+}
+
+#autor section:first-child div p {
+    padding: 1rem;
+    line-height: 1.5;
+}
+
+#autor section:last-child {
+    background-color: rgba(50, 50, 50, .4);
+}
+
+#autor #sus-obras {
+
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+}
+
+.card-libro {
+    width: 300px;
+    height: 300px;
+    display: grid;
+    place-items: center;
+    scroll-snap-align: end;
+    flex-shrink: 0;
+}
+
+.card-libro img {
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    object-position: top;
+}
+
+/* fin ------ */
 
 
 
@@ -497,6 +555,21 @@ body[id="politica"] main address,
     #grid-autores .flex-card-autor div h3 {
         text-align: left;
     }
+
+    #autor section:first-child {
+        width: 90%;
+        margin: 0 auto;
+        border: none;
+        box-shadow: none;
+    }
+
+    #autor section:first-child figure {
+        height: 80vh;
+    }
+
+    #autor section:last-child #sus-obras {
+        padding-inline: 2rem;
+    }
 }
 
 @media (min-width:1024px) {
@@ -511,5 +584,23 @@ body[id="politica"] main address,
 
     #recomendado article {
         width: 50%;
+    }
+
+    #autor section:first-child {
+        width: 80%;
+    }
+
+    #autor section:first-child figure img {
+        object-position: center;
+    }
+}
+
+@media (min-width:1440px) {
+    #autor section:first-child {
+        width: 60%;
+    }
+
+    #autor section:first-child figure img {
+        object-position: fill;
     }
 }

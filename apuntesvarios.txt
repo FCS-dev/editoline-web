@@ -10,7 +10,14 @@ https://simpleicons.org/?q=redes
 
 pdtes 08/02
 -----------
-:hover sobre nav
+:hover sobre nav (menu hambueguesa)
 :hover sobre buttons
 :hover sobre flex-card???
 Corregir el h1 cuando la pantalla esta entre 320px y 425px
+
+clamp sobre titulos, padding, margin
+refactorizar css
+hacer mockups como parte de la documentacion
+definir distribucion de los menus
+habilitar links
+suavizar bordes imagenes?
