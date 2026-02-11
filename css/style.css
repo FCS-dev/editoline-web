@@ -28,15 +28,19 @@
     --fondo1: #D3C3B9;
     --fondo2: #A79E9C;
     --fondo3: #B58863;
+    --fondo4: #D5B69D;
     --btn-color: #3D4D55;
     --color-font: #3D4D55;
     --color--font2: whitesmoke;
+    --box-shadow-oscuro1: rgba(0, 0, 0, .3);
+    --bg-oscuro: rgba(30, 30, 30, .3);
+    --bg-claro: rgba(220, 220, 220, .3);
 }
 
 body {
     background-color: var(--fondo1);
     font-family: var(--font-contenido);
-    color: #3D4D55;
+    color: var(--color-font);
     font-weight: 600;
     min-width: 320px;
     max-width: 1980px;
@@ -63,6 +67,10 @@ h3 {
     font-size: clamp(var(--h3-size-min), 12.86px + 1.607vw, var(--h3-size-max));
 }
 
+main p {
+    line-height: 1.5;
+}
+
 button {
     padding: .5rem;
     border-radius: 10vh;
@@ -83,7 +91,7 @@ main>h2+section,
 main>section,
 section+section,
 main+footer {
-    box-shadow: inset 0 20px 30px -20px rgba(0, 0, 0, .8);
+    box-shadow: inset 0 20px 30px -20px var(--box-shadow-oscuro1);
 }
 
 /* Seteos Iniciales FIN*/
@@ -134,12 +142,12 @@ header nav ul li a {
 }
 
 #recomendado {
-    background-color: #A79E9C;
+    background-color: var(--fondo2);
     padding-block: 2rem;
 }
 
 #grid-libros {
-    background-color: #B58863;
+    background-color: var(--fondo4);
     padding-block: 2rem;
 }
 
@@ -165,7 +173,7 @@ header nav ul li a {
 
 #recomendado article figure img {
     width: 100%;
-    box-shadow: 5px 5px 10px 5px rgba(20, 20, 20, .3);
+    box-shadow: 5px 5px 10px 5px var(--box-shadow-oscuro1);
 }
 
 #recomendado article div {
@@ -177,7 +185,6 @@ header nav ul li a {
 
 #recomendado article div p {
     text-align: left;
-    line-height: 1.5;
 }
 
 #recomendado article div button {
@@ -200,7 +207,7 @@ header nav ul li a {
 }
 
 #grid-libros .flex-card-libro:hover {
-    box-shadow: 5px 5px 10px 5px rgba(20, 20, 20, .3);
+    box-shadow: 5px 5px 10px 5px var(--box-shadow-oscuro1);
 }
 
 #grid-libros .flex-card-libro {
@@ -277,7 +284,7 @@ header nav ul li a {
 }
 
 body[id="politica"] :not(h2):not(h3) {
-    line-height: 1.5;
+    /* line-height: 1.5; */
 }
 
 body[id="politica"] main h3,
@@ -335,18 +342,18 @@ body[id="politica"] main address,
 #grid-autores h2 {
     grid-column: 1 / -1;
     color: var(--color--font2);
-    text-shadow: 5px 5px 5px #555555;
+    text-shadow: 5px 5px 5px var(--color-font);
 }
 
 #grid-autores .flex-card-autor:hover {
-    box-shadow: 5px 5px 10px 5px rgba(20, 20, 20, .3);
+    box-shadow: 5px 5px 10px 5px var(--box-shadow-oscuro1);
 }
 
 #grid-autores .flex-card-autor {
     width: 95%;
     padding: 1rem .5rem;
     border-radius: 5px;
-    background-color: rgba(220, 220, 220, .2);
+    background-color: var(--bg-claro);
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
@@ -410,11 +417,10 @@ body[id="politica"] main address,
 
 #autor section:first-child div p {
     padding: 1rem;
-    line-height: 1.5;
 }
 
 #autor section:last-child {
-    background-color: rgba(50, 50, 50, .4);
+    background-color: var(--bg-oscuro);
 }
 
 #autor #sus-obras {
@@ -460,7 +466,6 @@ body[id="politica"] main address,
 }
 
 #libro>main div p {
-    line-height: 1.5;
     padding: 1rem;
 }
 
@@ -496,7 +501,7 @@ body[id="politica"] main address,
     #recomendado article div {
         position: absolute;
         bottom: 0;
-        background-color: rgba(20, 20, 20, .5);
+        background-color: var(--bg-oscuro);
     }
 
     #recomendado article::after {
