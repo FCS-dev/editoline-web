@@ -28,15 +28,22 @@
     --fondo1: #D3C3B9;
     --fondo2: #A79E9C;
     --fondo3: #B58863;
+    --fondo4: #D5B69D;
     --btn-color: #3D4D55;
     --color-font: #3D4D55;
-    --color--font2: whitesmoke;
+    --color-font2: whitesmoke;
+    --box-shadow-oscuro1: rgba(0, 0, 0, .3);
+    --bg-oscuro: rgba(30, 30, 30, .3);
+    --bg-claro: rgba(220, 220, 220, .3);
+    --gris-claro: #ebebeb;
+    scroll-behavior: smooth;
 }
 
 body {
     background-color: var(--fondo1);
     font-family: var(--font-contenido);
-    color: #3D4D55;
+    /* color: var(--color-font); */
+    color: black;
     font-weight: 600;
     min-width: 320px;
     max-width: 1980px;
@@ -63,19 +70,52 @@ h3 {
     font-size: clamp(var(--h3-size-min), 12.86px + 1.607vw, var(--h3-size-max));
 }
 
+main p,
+strong,
+address {
+    line-height: 1.5;
+}
+
 button {
     padding: .5rem;
-    border-radius: 10vh;
+    border-radius: 5px;
     outline: none;
     border: none;
     background-color: var(--btn-color);
-    color: var(--color--font2);
+    color: var(--color-font2);
     transition: background-color 0.3s ease;
 }
 
 button:hover {
-    background-color: var(--color--font2);
+    background-color: var(--color-font2);
     color: var(--color-font);
+}
+
+figure {
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.btn-subir {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    text-decoration: none;
+    background: #222;
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, .3);
+    z-index: 1000;
+}
+
+.btn-subir:hover {
+    transform: translateY(-3px);
 }
 
 header+main,
@@ -83,7 +123,7 @@ main>h2+section,
 main>section,
 section+section,
 main+footer {
-    box-shadow: inset 0 20px 30px -20px rgba(0, 0, 0, .8);
+    box-shadow: inset 0 20px 30px -20px var(--box-shadow-oscuro1);
 }
 
 /* Seteos Iniciales FIN*/
@@ -92,15 +132,24 @@ main+footer {
 #flex-header {
     padding: clamp(var(--min-padding), 3.86px + 1.607vw, var(--max-padding));
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: left;
 }
 
+#flex-div figure a {
+    text-decoration: none;
+    color: inherit;
+}
+
+#flex-header nav {
+    align-self: center;
+}
+
 #flex-header #flex-div {
-    height: 7rem;
+    /* height: 7rem; */
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: row-reverse;
     justify-content: left;
     align-items: center;
 }
@@ -116,6 +165,95 @@ main+footer {
 #flex-header figure img {
     height: 100%;
 }
+
+/* Menú toggle - Manu INICIO*/
+#flex-header>nav :where(ul, input) {
+    display: none;
+}
+
+#flex-header>nav {
+    /* Añadimos esto para que el contenedor ocupe todo el ancho y permita alinear el icono */
+    display: flex;
+    justify-content: flex-end;
+}
+
+#flex-header>nav label {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    /* CAMBIO: Quitamos el margen izquierdo y ponemos uno derecho */
+    /* margin: 10px 10px 0 0;  */
+}
+
+#flex-header>nav :where(label, li):hover {
+    cursor: pointer;
+}
+
+
+/* Estilo general para cuando está cerrado */
+#flex-header>nav label::before {
+    content: "☰";
+    font-size: 40px;
+    line-height: 50px;
+    text-align: center;
+    display: block;
+}
+
+/* Estilo para cuando está abierto (CHECKED) */
+#flex-header>nav input:checked~label::before {
+    content: "×";
+    /* Este es el carácter especial de cierre */
+    font-size: 50px;
+    color: var(--color-font);
+    /* Puedes cambiar el color aquí */
+    /* background-image: none; */
+    /* Eliminamos la dependencia de la URL */
+}
+
+#flex-header>nav input:checked~ul {
+    display: block;
+    position: absolute;
+    /* CAMBIO: Aseguramos que el menú empiece desde arriba y cubra el ancho */
+    top: 98px;
+    left: 0;
+}
+
+#flex-header>nav ul {
+    width: 100%;
+    z-index: 100;
+    /* Para que quede por encima del contenido */
+}
+
+#flex-header>nav li {
+    display: block;
+    background-color: var(--fondo1);
+    padding: 20px;
+    font-size: 1.2em;
+    text-align: right;
+    /* OPCIONAL: Alinea el texto a la derecha también */
+}
+
+/* ... Resto de tu código (hover, laptop, media queries) se mantiene igual ... */
+
+#flex-header>nav li:hover,
+#laptop li:hover {
+    filter: brightness(105%);
+    color: black;
+}
+
+#flex-header #laptop {
+    display: none;
+}
+
+#laptop ul {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 2em;
+    list-style: none;
+    width: 60%;
+}
+
+/* Menú toggle - Manu FIN*/
 
 header nav ul {
     list-style: none;
@@ -134,16 +272,16 @@ header nav ul li a {
 }
 
 #recomendado {
-    background-color: #A79E9C;
+    background-color: var(--fondo2);
     padding-block: 2rem;
 }
 
 #grid-libros {
-    background-color: #B58863;
+    background-color: var(--fondo4);
     padding-block: 2rem;
 }
 
-#index>main>h2 {
+#catalogo>main>h2 {
     padding: clamp(var(--min-padding), 5.14px + 1.205vw, var(--max-padding));
     display: none;
 }
@@ -153,8 +291,8 @@ header nav ul li a {
 }
 
 #recomendado article h3 {
-    color: var(--color--font2);
-    text-shadow: 5px 5px 5px var(--color-font);
+    color: var(--color-font);
+    text-shadow: 5px 5px 5px var(--fondo1);
     text-align: center;
     padding: 2rem;
 }
@@ -165,11 +303,11 @@ header nav ul li a {
 
 #recomendado article figure img {
     width: 100%;
-    box-shadow: 5px 5px 10px 5px rgba(20, 20, 20, .3);
+    box-shadow: 5px 5px 10px 5px var(--box-shadow-oscuro1);
 }
 
 #recomendado article div {
-    color: var(--color--font2);
+    color: var(--color-font2);
     padding: clamp(var(--min-padding), 5.14px + 1.205vw, var(--max-padding));
     text-align: center;
     border-radius: 5px;
@@ -177,7 +315,6 @@ header nav ul li a {
 
 #recomendado article div p {
     text-align: left;
-    line-height: 1.5;
 }
 
 #recomendado article div button {
@@ -187,62 +324,88 @@ header nav ul li a {
 
 #grid-libros {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 425px));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     justify-content: center;
     justify-items: center;
+    align-items: stretch;
     gap: 2rem;
 }
 
 #grid-libros>h3 {
     grid-column: 1 / -1;
-    color: var(--color--font2);
-    text-shadow: 5px 5px 5px #555555;
+    color: var(--color-font);
+    text-shadow: 5px 5px 5px var(--fondo1);
 }
 
 #grid-libros .flex-card-libro:hover {
-    box-shadow: 5px 5px 10px 5px rgba(20, 20, 20, .3);
+    box-shadow: 5px 5px 10px 5px var(--box-shadow-oscuro1);
 }
 
 #grid-libros .flex-card-libro {
     width: 95%;
-    padding: 1rem .5rem;
+    padding: 1rem 1rem;
     border-radius: 5px;
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
     gap: 1rem;
+    background-color: var(--gris-claro);
+}
+
+#grid-libros .flex-card-libro h3 {
+    text-align: center;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    /* mismo alto para todos */
+    overflow: hidden;
+    /* flex-basis: 6.5rem; */
 }
 
 #grid-libros .flex-card-libro figure {
     width: 100%;
-    height: 150%;
-    /* width: 250px;
-    height: 250px; */
     aspect-ratio: 3 / 4;
-    flex: 1;
+    flex: 1 0 auto;
 }
 
 #grid-libros .flex-card-libro figure img {
     width: 100%;
     height: 100%;
-    /* object-fit: fill; */
-    object-fit: contain;
+    object-fit: fill;
     object-position: center;
+}
+
+#grid-libros .flex-card-libro p {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+    overflow: hidden;
+    /* text-overflow: ellipsis; */
 }
 
 #grid-libros .flex-card-libro button {
     width: 90%;
+    align-self: center;
 }
 
 /* Pie de pagina INICIO */
 #flex-footer {
-    padding: 2rem .5rem 1rem;
+    background-color: var(--color-font);
+    color: var(--color-font2);
+    padding: 2rem .5rem 2rem;
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
     gap: .5rem;
+}
+
+#flex-footer p>a {
+    text-decoration: none;
+    color: var(--color-font2);
+    text-decoration: underline;
+    text-transform: uppercase;
 }
 
 .social-nav {
@@ -252,7 +415,7 @@ header nav ul li a {
 }
 
 .social {
-    color: var(--btn-color);
+    color: var(--color-font2);
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -266,7 +429,7 @@ header nav ul li a {
 }
 
 .social:hover {
-    color: var(--color--font2);
+    color: var(--fondo3);
 }
 
 .social:hover svg {
@@ -280,9 +443,9 @@ header nav ul li a {
     display: block;
 }
 
-body[id="politica"] :not(h2):not(h3) {
-    line-height: 1.5;
-}
+/* body[id="politica"] :not(h2):not(h3) {
+ 
+} */
 
 body[id="politica"] main h3,
 body[id="politica"] main h2 {
@@ -325,9 +488,9 @@ body[id="politica"] main address,
 
 /* politica.html FIN*/
 
-/* autor.html INICIO*/
-
+/* autores.html INICIO*/
 #grid-autores {
+    padding-block: 1.5rem;
     background-color: var(--fondo3);
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 425px));
@@ -338,19 +501,19 @@ body[id="politica"] main address,
 
 #grid-autores h2 {
     grid-column: 1 / -1;
-    color: var(--color--font2);
-    text-shadow: 5px 5px 5px #555555;
+    color: var(--color-font);
+    text-shadow: 5px 5px 5px var(--fondo1);
 }
 
 #grid-autores .flex-card-autor:hover {
-    box-shadow: 5px 5px 10px 5px rgba(20, 20, 20, .3);
+    box-shadow: 5px 5px 10px 5px var(--box-shadow-oscuro1);
 }
 
 #grid-autores .flex-card-autor {
     width: 95%;
     padding: 1rem .5rem;
     border-radius: 5px;
-    background-color: rgba(220, 220, 220, .2);
+    background-color: var(--bg-claro);
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
@@ -359,10 +522,21 @@ body[id="politica"] main address,
 }
 
 #grid-autores .flex-card-autor div {
+    padding: 1rem;
     display: flex;
     flex-flow: column nowrap;
     gap: 1rem;
 }
+
+#grid-autores .flex-card-autor div p {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 10;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
 
 #grid-autores .flex-card-autor div h3 {
     text-align: center;
@@ -373,7 +547,10 @@ body[id="politica"] main address,
 }
 
 #grid-autores .flex-card-autor figure {
-    width: 80%;
+    padding-top: 1.5rem;
+    /* overflow: hidden;
+    border-radius: 5px; */
+    width: 90%;
     aspect-ratio: 2.5 / 3;
 }
 
@@ -381,7 +558,7 @@ body[id="politica"] main address,
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center;
+    object-position: top;
 }
 
 #grid-autores .flex-card-autor button {
@@ -391,7 +568,8 @@ body[id="politica"] main address,
 /* autor.html FIN*/
 
 /* {autor}.html INICIO*/
-#autor section {
+/* #autor section { */
+section {
     padding-block: 2rem;
 }
 
@@ -414,15 +592,13 @@ body[id="politica"] main address,
 
 #autor section:first-child div p {
     padding: 1rem;
-    line-height: 1.5;
 }
 
 #autor section:last-child {
-    background-color: rgba(50, 50, 50, .4);
+    background-color: var(--bg-oscuro);
 }
 
 #autor #sus-obras {
-
     display: flex;
     gap: 1rem;
     overflow-x: auto;
@@ -440,7 +616,7 @@ body[id="politica"] main address,
 
 .card-libro img {
     border-radius: 50%;
-    width: 100%; 
+    width: 100%;
     height: 100%;
     aspect-ratio: 1/1;
     object-fit: cover;
@@ -464,22 +640,204 @@ body[id="politica"] main address,
 }
 
 #libro>main div p {
-    line-height: 1.5;
     padding: 1rem;
 }
 
 /* {libro}.html FIN*/
+/* conocenos.html INICIO */
+#conocenos main {
+    background-color: var(--fondo4);
+}
 
+#conocenos h3,
+#conocenos em {
+    padding: clamp(var(--min-padding), 3.86px + 1.607vw, var(--max-padding));
+}
+
+#conocenos main section p,
+#conocenos strong,
+#conocenos address {
+    padding-inline: 1rem;
+}
+
+#conocenos>main>section>ul {
+    line-height: 1.5;
+    list-style: circle;
+    padding-left: 1rem;
+    list-style-position: inside;
+}
+
+#conocenos main h3 {
+    color: var(--color-font);
+    text-shadow: 5px 5px 5px var(--fondo1);
+}
+
+#conocenos .nuestros-productos {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#conocenos .flecha-derecha::after {
+    color: inherit;
+    content: " \2192";
+    /* Código Unicode de la flecha derecha */
+    margin-left: 5px;
+    /* Espacio entre el texto y la flecha */
+    font-weight: bolder;
+    font-size: 1.5rem;
+    /* text-align: right; */
+}
+
+#conocenos main h3 a {
+    text-decoration: none;
+    text-decoration: underline;
+    color: inherit;
+}
+
+
+#conocenos main section:nth-child(2),
+#conocenos main section:nth-child(3) {
+    background-color: var(--bg-claro);
+}
+
+#conocenos #nuestros-autores,
+#conocenos #nuestros-libros {
+    padding-block: 2rem;
+}
+
+#conocenos #nuestros-autores .conocenos-card-autor,
+#conocenos #nuestros-libros .conocenos-card-libro {
+    padding-block: 2rem;
+}
+
+#conocenos #nuestros-autores figure,
+#conocenos #nuestros-libros figure {
+    width: 300px;
+    height: 300px;
+    aspect-ratio: 1/1;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+#conocenos #nuestros-autores figure img,
+#conocenos #nuestros-libros figure img {
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: top;
+}
+
+#conocenos #nuestros-autores,
+#conocenos #nuestros-libros {
+    padding: 1rem;
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-left: 50%;
+    scroll-padding-right: 50%;
+}
+
+#nuestros-autores>*,
+#nuestros-libros>* {
+    scroll-snap-align: center;
+    flex: 0 0 auto;
+}
+
+/* Sección: Nuestras oficinas */
+#conocenos main>section:nth-child(4)>div {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+}
+
+#conocenos main>section:nth-child(4)>div iframe {
+    margin-top: 1.5rem;
+    width: 95%;
+    height: 50vh;
+    border: none;
+}
+
+#conocenos form,
+#conocenos fieldset {
+    border: none;
+    width: 100%;
+    padding: .5rem;
+}
+
+#conocenos form legend {
+    display: none;
+}
+
+#conocenos form ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#conocenos form li {
+    display: flex;
+    flex-flow: column nowrap;
+    padding-left: 0;
+}
+
+#conocenos form li input,
+#conocenos form li textarea {
+    height: 2.5rem;
+    border: none;
+    border-radius: 5px;
+    padding-inline: .5rem;
+}
+
+#conocenos form li input:hover,
+#conocenos form li textarea:hover {
+    border: 2px solid var(--btn-color);
+}
+
+#conocenos form li input:focus,
+#conocenos form li textarea:focus {
+    outline: none;
+    background-color: var(--bg-oscuro);
+    color: var(--color-font2);
+}
+
+#conocenos form li textarea {
+    height: calc(5 * 1.5em + 10px);
+    line-height: 1.5;
+    padding: .5rem;
+    resize: none;
+}
+
+#conocenos form li:last-of-type {
+    padding-block: 1rem;
+}
+
+/* conocenos.html FIN */
 /* Media Queries */
 
 @media (min-width:425px) {
     #flex-header #flex-div {
-        flex-direction: row;
+        flex-direction: row-reverse;
         justify-content: center;
     }
 }
 
 @media (min-width:768px) {
+    #flex-header #laptop {
+        display: flex;
+        justify-content: flex-end;
+        flex-grow: 1;
+    }
+
+    #flex-header>nav:first-of-type {
+        display: none;
+    }
+
     header nav ul {
         text-align: center;
     }
@@ -500,7 +858,9 @@ body[id="politica"] main address,
     #recomendado article div {
         position: absolute;
         bottom: 0;
-        background-color: rgba(20, 20, 20, .5);
+        /* background-color: var(--bg-oscuro); */
+        background-color: rgba(240, 240, 240, .8);
+        color: black;
     }
 
     #recomendado article::after {
@@ -509,18 +869,27 @@ body[id="politica"] main address,
         clear: both;
     }
 
+    #grid-libros .flex-card-libro h3 {
+        flex-basis: 4rem;
+    }
+
     #grid-libros .flex-card-libro figure {
         width: 75%;
     }
 
     #grid-autores {
-        grid-template-columns: repeat(auto-fit, 80vw);
+        grid-template-columns: repeat(auto-fit, 95vw);
     }
+
 
     #grid-autores .flex-card-autor {
         width: 100%;
-        flex-flow: row nowrap;
+        /* flex-flow: row nowrap; */
         gap: 3rem;
+    }
+
+    #grid-autores .flex-card-autor figure {
+        width: 50%;
     }
 
     #grid-autores .flex-card-autor div h3 {
@@ -539,14 +908,15 @@ body[id="politica"] main address,
     }
 
     #autor section:last-child #sus-obras {
-        padding-inline: 2rem;
+        /* padding-inline: 2rem; */
+    }
+
+    #conocenos section:nth-child(4) iframe {
+        width: 80%;
     }
 }
 
 @media (min-width:1024px) {
-    header nav ul li {
-        display: inline;
-    }
 
     header nav ul {
         text-transform: uppercase;
@@ -557,6 +927,10 @@ body[id="politica"] main address,
         width: 50%;
     }
 
+    #grid-libros .flex-card-libro h3 {
+        flex-basis: 5rem;
+    }
+
     #autor section:first-child {
         width: 80%;
     }
@@ -564,9 +938,35 @@ body[id="politica"] main address,
     #autor section:first-child figure img {
         object-position: center;
     }
+
+    #conocenos main section:nth-child(4),
+    #conocenos main section:nth-child(5) {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #conocenos main section:nth-child(1) {
+        width: 80%;
+        margin-inline: auto;
+        box-shadow: none;
+        /* display: flex;
+        flex-flow: column nowrap;
+        justify-content: center; */
+    }
+
+    #conocenos main section:nth-child(4) div,
+    #conocenos main section:nth-child(5) form {
+        width: 80%;
+    }
 }
 
 @media (min-width:1440px) {
+    #grid-libros .flex-card-libro h3 {
+        flex-basis: 6.5rem;
+    }
+
     #autor section:first-child {
         width: 60%;
     }
@@ -575,7 +975,34 @@ body[id="politica"] main address,
         object-position: fill;
     }
 
+    #grid-autores .flex-card-autor {
+        flex-flow: row nowrap;
+    }
+
+    #grid-autores .flex-card-autor div {
+        height: 100%;
+        justify-content: space-between;
+    }
+
     #grid-autores .flex-card-autor figure {
-        width: 50%;
+        flex: 1 0 30%;
+    }
+
+
+    #conocenos main section:nth-child(1),
+    #conocenos main section:nth-child(4) div,
+    #conocenos main section:nth-child(5) form {
+        width: 60%;
+
+    }
+}
+
+@media (min-width:1920px) {
+    #grid-libros .flex-card-libro h3 {
+        flex-basis: 7.5rem;
+    }
+
+    #grid-autores .flex-card-autor {
+        width: 60%;
     }
 }

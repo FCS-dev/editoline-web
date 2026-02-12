@@ -18,207 +18,275 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body id="index">
+<body id="conocenos">
     <header id="flex-header">
         <div id="flex-div">
             <h1>Editoline</h1>
-            <figure><img src="imgs/logo-simple-editoline-lineas-oscuras.png" alt="logo editoline"></figure>
+            <figure>
+                <a href="index.html">
+                    <img src="imgs/logo-simple-editoline-lineas-oscuras.png" alt="logo editoline">
+                </a>
+            </figure>
         </div>
         <nav>
+            <input type="checkbox" id="menu">
+            <label for="menu"> <span class="icon"></span> </label>
             <ul>
-                <li><a href="index.html">Catálogo</a></li>
-                <li><a href="autor.html">Autores</a></li>
-                <li><a href="quienes.html">Conócenos</a></li>
-                <!-- Quienes somos, imagen del local, foto del personal -->
-                <li><a href="contacto.html">Contáctanos</a></li>
-                <!-- mapa de ubicacion, formulario de newsletter, horarios de atención -->
-                <li><a href="podcast.html">Podcast</a></li>
-                <!-- ???? Videos, podcast ivoox.com -->
+                <li><a href="#">Quienes Somos</a></li>
+                <li><a href="catalogo.html">Nuestro catálogo</a></li>
+                <li><a href="autores.html">Los autores</a></li>
+            </ul>
+        </nav>
+        <nav id="laptop">
+            <ul>
+                <li><a href="#">Quienes Somos</a></li>
+                <li><a href="catalogo.html">Nuestro catálogo</a></li>
+                <li><a href="autores.html">Los autores</a></li>
             </ul>
         </nav>
     </header>
     <main>
-        <h2>Catálogo disponible</h2>
-        <section id="recomendado">
-            <h2>El Recomendado</h2>
-            <article>
-                <h3>Recomendación de la semana</h3>
-                <figure><img src="imgs/recomendacion/milk-and-honey.jpg" alt="figura-maqueta"></figure>
-                <div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta in voluptatibus quaerat
-                        repudiandae maiores mollitia.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta in voluptatibus quaerat
-                        repudiandae maiores mollitia.</p>
-                    <button>Leer mas...</button>
+        <section>
+            <h3>Nuestra Visión</h3>
+            <em>Impulsando nuevas voces, creando futuros literarios</em>
+            <p>
+                En Editoline creemos que el talento joven merece ser leído, escuchado y reconocido.
+                Somos una editorial comprometida con descubrir, acompañar y proyectar a jóvenes autores que buscan
+                transformar sus ideas en obras publicadas de calidad profesional.
+            </p>
+            <p>Nuestra misión es brindar:</p>
+            <ul>
+                <li>Asesoría editorial personalizada</li>
+                <li>Corrección y edición profesional</li>
+                <li>Diseño y maquetación atractiva</li>
+                <li>Distribución estratégica</li>
+                <li>Promoción y posicionamiento del autor</li>
+            </ul>
+            <p>Queremos convertir historias emergentes en libros que dejen huella.</p>
+            <p>Creemos firmemente que cada manuscrito encierra una voz única y una mirada irrepetible del mundo. Por eso
+                trabajamos de manera cercana con cada autor, respetando su estilo, fortaleciendo su propuesta narrativa
+                y acompañándolo en cada etapa del proceso editorial. Más que publicar libros, construimos trayectorias
+                literarias sólidas y sostenibles.</p>
+            <p>Aspiramos a ser un puente entre el talento emergente y el mercado editorial, generando oportunidades
+                reales de crecimiento, visibilidad y profesionalización. En Editoline no solo editamos historias:
+                cultivamos carreras, fomentamos comunidades lectoras y apostamos por una nueva generación de autores
+                capaces de inspirar, cuestionar y transformar.</p>
+        </section>
+        <section>
+            <div class="nuestros-productos">
+                <h3>Nuestro Catálogo</h3>
+                <span class="flecha-derecha">Continuar</span>
+            </div>
+            <div id="nuestros-libros">
+                <div class="conocenos-card-libro">
+                    <figure>
+                        <img src="imgs/portadas/Adriana-Planas-Sitja-Sombras-de-Tbilisi.jpg" alt="Sombras de Tbilisi">
+                        <figcaption>Sombras de Tbilisi</figcaption>
+                    </figure>
                 </div>
-            </article>
+                <div class="conocenos-card-libro">
+                    <figure>
+                        <img src="imgs/portadas/Adriana-Planas-Sitja-The-roach-nest.jpg" alt="The roach nest">
+                        <figcaption>The roach nest</figcaption>
+                    </figure>
+                </div>
+                <div class="conocenos-card-libro">
+                    <figure>
+                        <img src="imgs/portadas/Alec-Bolcierte-Null-Aurora-de-cristal.jpg" alt="Aurora de cristal">
+                        <figcaption>Aurora de cristal</figcaption>
+                    </figure>
+                </div>
+                <div class="conocenos-card-libro">
+                    <figure>
+                        <img src="imgs/portadas/Alec-Bolcierte-Null-Catedra-de-sangre-y-estrellas.jpg"
+                            alt="Catedral de sangre y estrellas">
+                        <figcaption>Catedral de sangre y estrellas</figcaption>
+                    </figure>
+                </div>
+                <div class="conocenos-card-libro">
+                    <figure>
+                        <img src="imgs/portadas/Andrata-Cuffaro-Note-La-maldicion-de-trevi.jpg"
+                            alt="La maldicion de Trevi">
+                        <figcaption>La maldicion de Trevi</figcaption>
+                    </figure>
+                </div>
+                <div class="conocenos-card-libro">
+                    <figure>
+                        <img src="imgs/portadas/Andrata-Cuffaro-Note-visitudes-de-una-condesa-en-la-logia-carnivale.jpg"
+                            alt="Visitudes de una Condesa en la logia Carnivale">
+                        <figcaption>Visitudes de una Condesa en la logia Carnivale</figcaption>
+                    </figure>
+                </div>
+                <div class="conocenos-card-libro">
+                    <figure>
+                        <img src="imgs/portadas/krauss-van-ulfien-dorsh-constructor-de-mundos.jpg"
+                            alt="Constructor de mundos">
+                        <figcaption>Constructor de mundos</figcaption>
+                    </figure>
+                </div>
+                <div class="conocenos-card-libro">
+                    <figure>
+                        <img src="imgs/portadas/Krauss-van-Ulfien-Dorsh-Historia-Secreta-Caral-del-Canibal-en-neuschwanstein.jpg"
+                            alt="Historia secreta Caral del Caníbal en Neuschwanstein">
+                        <figcaption>Historia secreta Caral del Caníbal en Neuschwanstein</figcaption>
+                    </figure>
+                </div>
+                <div class="conocenos-card-libro">
+                    <figure>
+                        <img src="imgs/portadas/Lucca-Andiatti-Iberus-Beastat-inc.jpg" alt="Beastat inc">
+                        <figcaption>Beastat inc</figcaption>
+                    </figure>
+                </div>
+                <div class="conocenos-card-libro">
+                    <figure>
+                        <img src="imgs/portadas/Lucca-Andiatti-Iberus-La-Maldicion-de-vitra.jpg"
+                            alt="La maldición de Vitra">
+                        <figcaption>La maldición de Vitra</figcaption>
+                    </figure>
+                </div>
+                <div class="conocenos-card-libro">
+                    <figure>
+                        <img src="imgs/portadas/Mads-Rasmussen-Berch-invasion-en-groenlandia.jpg"
+                            alt="Invasión en Groelandia">
+                        <figcaption>Invasión en Groelandia</figcaption>
+                    </figure>
+                </div>
+                <div class="conocenos-card-libro">
+                    <figure>
+                        <img src="imgs/portadas/Zahi-Iasshim-Hawass-El-libro-perdido-de-seshat.jpg"
+                            alt="El libro perdido de Seshat">
+                        <figcaption>El libro perdido de Seshat</figcaption>
+                    </figure>
+                </div>
+            </div>
+            <h3><a href="catalogo.html">Mas detalle de nuestro catálogo...</a></h3>
         </section>
-        <section id="grid-libros">
-            <h3>Nuestro catálogo</h3>
-            <article class="flex-card-libro">
-                <h3>Cátedra de Sangre y Estrellas</h3>
-                <figure><img src="imgs/portadas/640x640/Alec Bolcierte Null - Catedra de sangre y estrellas.jpg"
-                        alt="catedra-sangre-estrellas"></figure>
-                <p>Estilo: Sci-fi romántico oscuro con toques thriller/gótico.
-                    Fondo de nebulosa profunda con tonos púrpura, azul noche y rojo sangre. Estrellas y un planeta
-                    lejano al fondo. En primer plano, el profesor (hombre maduro, traje elegante pero ligeramente
-                    desaliñado/manchado de sangre sutil, expresión intensa y peligrosa, gafas quizás) abrazando o
-                    mirando fijamente a la alienígena. Ella es hermosa, exótica, de piel iridiscente o con tonos
-                    azul-verde plateado, rasgos andróginos/femeninos fuertes, ojos grandes luminosos, quizás tentáculos
-                    suaves o cabello etéreo flotando como en gravedad cero, transmitiendo poder y sensualidad lesbiana
-                    (aunque el romance es con él, ella es explícitamente lesbiana en su especie/origen).</p>
-                <button>Leer mas...</button>
-            </article>
-            <article class="flex-card-libro">
-                <h3>Historia Secreta Caral del Canibal en Neuschwanstein</h3>
-                <figure><img
-                        src="imgs/portadas/640x640/Krauss van Ulfien Dorsh - Historia Secreta Caral del Canibal en neuschwanstein.jpg"
-                        alt="canibal-neuschwanstein"></figure>
-                <p>Se refiere a una "historia secreta" o leyenda oculta relacionada con un "Caral del Caníbal" en el
-                    castillo de Neuschwanstein, el famoso palacio de cuento de hadas en Baviera, Alemania, construido
-                    por el rey Luis II en el siglo XIX.</p>
-                <p>El castillo es famoso por su arquitectura romántica, su inspiración en óperas de Wagner, la trágica
-                    vida de Luis II (quien fue declarado loco y murió misteriosamente), y por ser el modelo para el
-                    castillo de Disney. No hay referencias creíbles a caníbales, rituales macabros ni nada similar en su
-                    historia oficial o en el folclore local bávaro.</p>
-                <button>Leer mas...</button>
-            </article>
-            <article class="flex-card-libro">
-                <h3>La Maldición de Vitra</h3>
-                <figure><img src="imgs/portadas/640x640/Lucca Andiatti Iberus - La Maldicion de vitra.jpg"
-                        alt="maldicion-vitra"></figure>
-                <p>Parece que "La Maldición de Vitra" podría ser una referencia oscura, un nombre inventado o una
-                    variación de algo que está conectando con la historia anterior del "Caral del Caníbal" en
-                    Neuschwanstein. Como no hay una leyenda histórica con ese título exacto (Vitra aparece más en
-                    contextos de anime/manga donde Vritra es un dragón maldito con llamas negras que consumen almas, o
-                    en ficciones Wattpad)</p>
-                <button>Leer mas...</button>
-            </article>
-            <article class="flex-card-libro">
-                <h3>Visitudes de una Condesa en la Logia Carnivale</h3>
-                <figure><img
-                        src="imgs/portadas/640x640/Andrata Cuffaro Note - visitudes de una condesa en la logia carnivale.jpg"
-                        alt="logia-carnivale"></figure>
-                <p>La Logia Carnivale del Oso de Sangre, un círculo secreto que no aparece en ningún archivo histórico
-                    oficial, pero que los susurros más antiguos (los que solo se cuentan en veladas cerradas entre
-                    ocultistas bávaros o en foros olvidados de la deep web) vinculan a rituales prohibidos de la nobleza
-                    europea del siglo XIX.</p>
-                <p>Esta es ficción oscura, inspirada en el romanticismo gótico, sociedades secretas reales como los
-                    Illuminati o los supuestos remanentes templarios, y el simbolismo del oso como tótem berserker de
-                    furia y sangre (común en mitos nórdicos y germanos).</p>
-                <button>Leer mas...</button>
-            </article>
-            <article class="flex-card-libro">
-                <h3>Invasión en Groenlandia</h3>
-                <figure><img src="imgs/portadas/640x640/Mads Rasmussen Berch- invasion en groenlandia.jpg"
-                        alt="invasion-groenlandia"></figure>
-                <p>En las profundidades heladas de Groenlandia, donde el hielo milenario guarda secretos más antiguos
-                    que la humanidad misma, circula desde finales de 2025 y principios de 2026 una teoría conspirativa
-                    que mezcla geopolítica, recursos estratégicos y fenómenos anómalos: la supuesta "invasión" o
-                    descubrimiento de OVNIs enterrados en zonas ricas en tierras raras (elementos como neodimio,
-                    disprosio, lantano y otros cruciales para baterías, misiles, IA y tecnología militar), supuestamente
-                    encontrados por tropas o inteligencia estadounidense.</p>
-                <button>Leer mas...</button>
-            </article>
-            <article class="flex-card-libro">
-                <h3>El libro perdido de Seshat</h3>
-                <figure><img src="imgs/portadas/640x640/Zahi Iasshim Hawass - El libro perdido de seshat.jpg"
-                        alt="figura-maqueta"></figure>
-                <p>Seshat, la diosa egipcia antigua conocida como la "Señora de los Libros", la "Señora de la Escritura"
-                    y la "Señora de la Casa de los Rollos", era la guardiana suprema del conocimiento escrito, la
-                    medición, la arquitectura, la historia y el destino en la mitología del Antiguo Egipto. Su nombre
-                    literalmente significa "la que escribe" o "la escriba femenina" (de sšꜣt), y se la representaba como
-                    una mujer con una piel de leopardo sobre su vestido, llevando en la cabeza un tocado con una
-                    estrella de siete puntas (a veces con cuernos de vaca) y un arco lunar. Era consorte, hija o
-                    contraparte femenina de Thot (Djehuty), el dios de la sabiduría y la escritura, aunque en algunas
-                    tradiciones se le atribuía a ella la invención de los jeroglíficos, mientras que Thot los enseñaba a
-                    los humanos.</p>
-                <button>Leer mas...</button>
-            </article>
-            <article class="flex-card-libro">
-                <h3>La Maldición de Trevi</h3>
-                <figure><img src="imgs/portadas/640x640/Andrata Cuffaro Note - La maldicion de trevi.jpg" alt="maldicion-trevi">
-                </figure>
-                <p>La Maldición de Trevi es una historia oscura que no aparece en las guías turísticas ni en los libros
-                    de historia oficial de Roma. Se susurra solo en las noches frías de invierno, cuando la Fontana di
-                    Trevi está casi desierta, los chorros de agua suenan como lamentos y las luces parpadean sobre el
-                    mármol mojado. Todo comenzó (o eso dicen los que juran haberlo visto) en una madrugada de 1998,
-                    aunque algunos la remontan a los años 70 o incluso antes, en los tiempos en que la fuente aún no
-                    estaba tan vigilada.</p>
-                <button>Leer mas...</button>
-            </article>
-            <article class="flex-card-libro">
-                <h3>The Roach Nest</h3>
-                <figure><img src="imgs/portadas/640x640/Adriana Planas-Sitja - The roach nest.jpg" alt="roach-nest"></figure>
-                <p>“The Roach Nest” es un relato de terror corporal extremo que juega con uno de los miedos más 
-                    primitivos del ser humano: la infestación desde dentro. La historia gira en torno a un hombre 
-                    aparentemente normal que comienza a experimentar síntomas físicos cada vez más perturbadores: 
-                    dolor abdominal, náuseas, una sensación constante de movimiento interno y una degradación 
-                    progresiva de su salud y su mente.</p>
-                <button>Leer mas...</button>
-            </article>
-            <article class="flex-card-libro">
-                <h3>Beastat: Satélite de la Aniquilación</h3>
-                <figure><img src="imgs/portadas/640x640/Lucca Andiatti Iberus - Beastat inc.jpg" alt="beastat"></figure>
-                <p>En Japón, Beastat Inc, una corporación tecnológica de alcance global, anuncia el lanzamiento de su 
-                    nuevo satélite: ATHENA, una inteligencia artificial diseñada para optimizar el flujo de información
-                     y comunicaciones en todo el planeta.</p>
-                <button>Leer mas...</button>
-            </article>
-            <article class="flex-card-libro">
-                <h3>Aurora de Cristal</h3>
-                <figure><img src="imgs/portadas/640x640/Alec Bolcierte Null - Aurora de cristal.jpg" alt="aurora-cristal"></figure>
-                <p>El viento cortante del Ártico no perdona a nadie, y la nieve oculta secretos que la humanidad aún 
-                    no está lista para descubrir. Una mañana, tras un cielo iluminado por auroras extrañas, un OVNI 
-                    desciende silencioso sobre el hielo.</p>
-                <button>Leer mas...</button>
-            </article>
-            <article class="flex-card-libro">
-                <h3>Sombras de Tbilisi</h3>
-                <figure><img src="imgs/portadas/640x640/Adriana Planas Sitja - Sombras de Tbilisi.jpg" alt="sombras-tiblisi"></figure>
-                <p>Biografia de Sascko, nació en Tbilisi, entre calles estrechas y patios donde el humo de la cocina se
-                     mezclaba con el murmullo de los vecinos. Desde niño, Zakhar Kalashov aprendió que la vida no es justa, 
-                     y que la fuerza y la astucia valen más que cualquier diploma. Los rumores sobre su familia hablaban de 
-                     antiguos negocios y pequeñas “soluciones” para problemas demasiado grandes para resolverse de manera honesta.</p>
-                <button>Leer mas...</button>
-            </article>
-            <article class="flex-card-libro">
-                <h3>El Constructor de Mundos</h3>
-                <figure><img src="imgs/portadas/640x640/krauss van ulfien dorsh - constructor de mundos.jpg" alt="constructor-mundos"></figure>
-                <p>No tiene edad, y sin embargo ha visto nacer y morir a incontables civilizaciones. Su nombre se ha perdido entre
-                     las lenguas de los mundos, pero su obra siempre deja huella: puentes que desafían la gravedad, ciudades que crecen como si fueran vivas, defensas que protegen a pueblos enteros de catástrofes que nadie más podría prever.</p>
-                <button>Leer mas...</button>
-            </article>
-
+        <section>
+            <div class="nuestros-productos">
+                <h3>Nuestros Autores</h3>
+                <span class="flecha-derecha">Continuar</span>
+            </div>
+            <div id="nuestros-autores">
+                <div class="conocenos-card-autor">
+                    <figure>
+                        <img src="imgs/autores/Adriana-planas.jpg" alt="Adriana Planas">
+                        <figcaption>Adriana Planas</figcaption>
+                    </figure>
+                </div>
+                <div class="conocenos-card-autor">
+                    <figure>
+                        <img src="imgs/autores/alec-bolcierte.jpg" alt="Alec Bolcierte">
+                        <figcaption>Alec Bolcierte</figcaption>
+                    </figure>
+                </div>
+                <div class="conocenos-card-autor">
+                    <figure>
+                        <img src="imgs/autores/Andrata-cuffaro.jpg" alt="Andrata Cuffaro">
+                        <figcaption>Andrata Cuffaro</figcaption>
+                    </figure>
+                </div>
+                <div class="conocenos-card-autor">
+                    <figure>
+                        <img src="imgs/autores/krauss-van.jpg" alt="Krauss Van">
+                        <figcaption>Krauss Van</figcaption>
+                    </figure>
+                </div>
+                <div class="conocenos-card-autor">
+                    <figure>
+                        <img src="imgs/autores/lucca-andiatti.jpg" alt="Lucca Andiatti">
+                        <figcaption>Lucca Andiatti</figcaption>
+                    </figure>
+                </div>
+                <div class="conocenos-card-autor">
+                    <figure>
+                        <img src="imgs/autores/mads.jpg" alt="Mads">
+                        <figcaption>Mads</figcaption>
+                    </figure>
+                </div>
+                <div class="conocenos-card-autor">
+                    <figure>
+                        <img src="imgs/autores/zahi-ibrahim-zawass.jpg" alt="Zahi Ibrahim Zawass">
+                        <figcaption>Zahi Ibrahim Zawass</figcaption>
+                    </figure>
+                </div>
+            </div>
+            <h3><a href="autores.html">Mas detalle de nuestros autores...</a></h3>
         </section>
+        <section>
+            <h3>Nuestras oficinas</h3>
+            <strong>Editorial Editoline</strong>
+            <address>
+                C.I.F. S0811001G<br>
+                <span lang="ca">Plaça del Comte de Sert</span>, 25<br>
+                08035 - Barcelona
+            </address>
+            <p>Teléfono: +34 932541700</p>
+            <p>Horario de atención:</p>
+            <p>Lunes a Viernes — 9:00 AM a 6:00 PM</p>
+            <div>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2992.037957512811!2d2.1314790764409075!3d41.416694694176265!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4981b5fdca4b1%3A0x35e8d1d280af19bd!2sCentre%20d&#39;Innovaci%C3%B3%20i%20Formaci%C3%B3%20Ocupacional%20(CIFO)%20de%20Barcelona%20La%20Violeta!5e0!3m2!1ses-419!2ses!4v1770826703790!5m2!1ses-419!2ses"
+                    allowfullscreen="" loading="lazy">
+                </iframe>
+            </div>
+        </section>
+        <section>
+            <h3>Contáctanos</h3>
+            <p>
+                ¿Tienes un manuscrito listo? ¿Quieres publicar tu primera obra?
+                Estamos aquí para ayudarte.
+            </p>
+            <form action="#" method="POST">
+                <fieldset>
+                    <legend>Formulario de Contacto</legend>
+                    <ul>
+                        <li>
+                            <label>Nombre completo:</label>
+                            <input type="text" name="nombre" required>
+                        </li>
+                        <li>
+                            <label>Correo electrónico:</label>
+                            <input type="email" name="email" required>
+                        </li>
+                        <li><label>Mensaje:</label>
+                            <textarea name="mensaje" rows="5" required maxlength="500"></textarea>
+                        </li>
+                        <li><button type="submit">Enviar mensaje</button></li>
+                    </ul>
+                </fieldset>
+            </form>
+        </section>
+        <a href="#conocenos" class="btn-subir" aria-label="Volver arriba">↑</a>
     </main>
     <footer id="flex-footer">
         <p>&copy; 2026 Editoline.</p>
-        <p><small>Realizado por: <small>Arnau Pardal</small> y <small>Franco Calderón</small></small></p>
-        <p><a href="politica.html">Terminos legales</a></p>
+        <p><small>Realizado por:
+                <small><span lang="ca">Arnau Pardal</span></small> y
+                <small>Franco Calderón</small></small></p>
+        <p>Revisa nuestras <a href="politica.html"><strong>políticas de privacidad</strong></a></p>
         <nav class="social-nav" aria-label="Redes sociales">
-            <a href="#" class="social" aria-label="Instagram">
+            <a href="https://www.instagram.com/" class="social" aria-label="Instagram" target="_blank">
                 <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <title>Instagram</title>
                     <path
                         d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077" />
                 </svg>
             </a>
-            <a href="#" class="social" aria-label="TikTok">
+            <a href="https://www.tiktok.com/explore" class="social" aria-label="TikTok" target="_blank">
                 <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <title>TikTok</title>
                     <path
                         d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z" />
                 </svg>
             </a>
-            <a href="#" class="social" aria-label="Facebook">
+            <a href="https://es-es.facebook.com/" class="social" aria-label="Facebook" target="_blank">
                 <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <title>Facebook</title>
                     <path
                         d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z" />
                 </svg>
             </a>
-            <a href="#" class="social" aria-label="X (Twitter)">
+            <a href="https://x.com/" class="social" aria-label="X (Twitter)" target="_blank">
                 <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <title>X</title>
                     <path
@@ -226,8 +294,6 @@
                 </svg>
             </a>
         </nav>
-
-
     </footer>
 </body>
 
