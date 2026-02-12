@@ -36,6 +36,7 @@
     --bg-oscuro: rgba(30, 30, 30, .3);
     --bg-claro: rgba(220, 220, 220, .3);
     --gris-claro: #ebebeb;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -88,6 +89,33 @@ button {
 button:hover {
     background-color: var(--color-font2);
     color: var(--color-font);
+}
+
+figure {
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.btn-subir {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    text-decoration: none;
+    background: #222;
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, .3);
+    z-index: 1000;
+}
+
+.btn-subir:hover {
+    transform: translateY(-3px);
 }
 
 header+main,
@@ -296,9 +324,10 @@ header nav ul li a {
 
 #grid-libros {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 425px));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     justify-content: center;
     justify-items: center;
+    align-items: stretch;
     gap: 2rem;
 }
 
@@ -314,19 +343,30 @@ header nav ul li a {
 
 #grid-libros .flex-card-libro {
     width: 95%;
-    padding: 1rem .5rem;
+    padding: 1rem 1rem;
     border-radius: 5px;
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
     gap: 1rem;
+    background-color: var(--gris-claro);
+}
+
+#grid-libros .flex-card-libro h3 {
+    text-align: center;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    /* mismo alto para todos */
+    overflow: hidden;
+    /* flex-basis: 6.5rem; */
 }
 
 #grid-libros .flex-card-libro figure {
     width: 100%;
     aspect-ratio: 3 / 4;
-    flex: 1;
+    flex: 1 0 auto;
 }
 
 #grid-libros .flex-card-libro figure img {
@@ -336,8 +376,17 @@ header nav ul li a {
     object-position: center;
 }
 
+#grid-libros .flex-card-libro p {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+    overflow: hidden;
+    /* text-overflow: ellipsis; */
+}
+
 #grid-libros .flex-card-libro button {
     width: 90%;
+    align-self: center;
 }
 
 /* Pie de pagina INICIO */
@@ -439,8 +488,7 @@ body[id="politica"] main address,
 
 /* politica.html FIN*/
 
-/* autor.html INICIO*/
-
+/* autores.html INICIO*/
 #grid-autores {
     padding-block: 1.5rem;
     background-color: var(--fondo3);
@@ -480,6 +528,16 @@ body[id="politica"] main address,
     gap: 1rem;
 }
 
+#grid-autores .flex-card-autor div p {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 10;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+
 #grid-autores .flex-card-autor div h3 {
     text-align: center;
 }
@@ -490,8 +548,8 @@ body[id="politica"] main address,
 
 #grid-autores .flex-card-autor figure {
     padding-top: 1.5rem;
-    overflow: hidden;
-    border-radius: 5px;
+    /* overflow: hidden;
+    border-radius: 5px; */
     width: 90%;
     aspect-ratio: 2.5 / 3;
 }
@@ -500,7 +558,7 @@ body[id="politica"] main address,
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center;
+    object-position: top;
 }
 
 #grid-autores .flex-card-autor button {
@@ -671,7 +729,7 @@ section {
     height: 90%;
     border-radius: 50%;
     object-fit: cover;
-    object-position: center;
+    object-position: top;
 }
 
 #conocenos #nuestros-autores,
@@ -800,7 +858,9 @@ section {
     #recomendado article div {
         position: absolute;
         bottom: 0;
-        background-color: var(--bg-oscuro);
+        /* background-color: var(--bg-oscuro); */
+        background-color: rgba(240, 240, 240, .8);
+        color: black;
     }
 
     #recomendado article::after {
@@ -809,18 +869,27 @@ section {
         clear: both;
     }
 
+    #grid-libros .flex-card-libro h3 {
+        flex-basis: 4rem;
+    }
+
     #grid-libros .flex-card-libro figure {
         width: 75%;
     }
 
     #grid-autores {
-        grid-template-columns: repeat(auto-fit, 80vw);
+        grid-template-columns: repeat(auto-fit, 95vw);
     }
+
 
     #grid-autores .flex-card-autor {
         width: 100%;
-        flex-flow: row nowrap;
+        /* flex-flow: row nowrap; */
         gap: 3rem;
+    }
+
+    #grid-autores .flex-card-autor figure {
+        width: 50%;
     }
 
     #grid-autores .flex-card-autor div h3 {
@@ -858,6 +927,10 @@ section {
         width: 50%;
     }
 
+    #grid-libros .flex-card-libro h3 {
+        flex-basis: 5rem;
+    }
+
     #autor section:first-child {
         width: 80%;
     }
@@ -890,6 +963,10 @@ section {
 }
 
 @media (min-width:1440px) {
+    #grid-libros .flex-card-libro h3 {
+        flex-basis: 6.5rem;
+    }
+
     #autor section:first-child {
         width: 60%;
     }
@@ -898,8 +975,17 @@ section {
         object-position: fill;
     }
 
+    #grid-autores .flex-card-autor {
+        flex-flow: row nowrap;
+    }
+
+    #grid-autores .flex-card-autor div {
+        height: 100%;
+        justify-content: space-between;
+    }
+
     #grid-autores .flex-card-autor figure {
-        width: 50%;
+        flex: 1 0 30%;
     }
 
 
@@ -908,5 +994,15 @@ section {
     #conocenos main section:nth-child(5) form {
         width: 60%;
 
+    }
+}
+
+@media (min-width:1920px) {
+    #grid-libros .flex-card-libro h3 {
+        flex-basis: 7.5rem;
+    }
+
+    #grid-autores .flex-card-autor {
+        width: 60%;
     }
 }
