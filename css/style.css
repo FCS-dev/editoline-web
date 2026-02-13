@@ -7,7 +7,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-size: clamp(16px, 15.23px + 0.241vw, 20px);
+
 }
 
 :root {
@@ -20,7 +20,7 @@
     --h2-size-min: 1rem;
     --h2-size-max: 3.5rem;
     --h3-size-min: 1rem;
-    --h3-size-max: 3rem;
+    --h3-size-max: 2.5rem;
     --min-padding: 0.5rem;
     --max-padding: 2rem;
     --min-margin: 0.5rem;
@@ -47,6 +47,7 @@ body {
     min-width: 320px;
     max-width: 1980px;
     margin: 0 auto;
+    font-size: clamp(16px, 15.23px + 0.241vw, 20px);
 }
 
 h1,
@@ -66,7 +67,7 @@ h2 {
 }
 
 h3 {
-    font-size: clamp(var(--h3-size-min), 12.86px + 1.607vw, var(--h3-size-max));
+    font-size: clamp(var(--h3-size-min), 11.37px + 1.446vw, var(--h3-size-max));
 }
 
 main p,
@@ -87,12 +88,15 @@ address {
     margin: 1rem auto;
     text-align: center;
     padding: 1rem 1rem;
+    transition: transform 0.3s ease;
+
 }
 
 .btn-leer:hover {
     background-color: var(--color-font2);
     color: var(--color-font);
     border: 1px solid var(--btn-color);
+    transform: scale(1.025);
 }
 
 figure {
@@ -369,6 +373,11 @@ header nav ul li {
     height: 100%;
     object-fit: fill;
     object-position: center;
+    transition: transform linear 0.5s;
+}
+
+#grid-libros .flex-card-libro figure img:hover {
+    transform: translateY(-5%);
 }
 
 #grid-libros .flex-card-libro p {
@@ -656,6 +665,11 @@ section {
     background-color: var(--fondo4);
 }
 
+#conocenos main section h2,
+#conocenos main section em {
+    padding-inline: 1rem;
+}
+
 #conocenos h3,
 #conocenos em {
     padding: clamp(var(--min-padding), 3.86px + 1.607vw, var(--max-padding));
@@ -734,6 +748,13 @@ section {
     border-radius: 50%;
     object-fit: cover;
     object-position: top;
+    transition: transform linear 0.3s, box-shadow linear 0.3s;
+}
+
+#conocenos #nuestros-autores figure img:hover,
+#conocenos #nuestros-libros figure img:hover {
+    transform: scale(1.05);
+    box-shadow: 5px 5px 5px black;
 }
 
 #conocenos #nuestros-autores,
@@ -930,7 +951,7 @@ section {
     }
 
     #grid-libros .flex-card-libro h3 {
-        flex-basis: 5rem;
+        flex-basis: 4.5rem;
     }
 
     #autor section:first-child {
@@ -977,7 +998,7 @@ section {
 
 @media (min-width:1440px) {
     #grid-libros .flex-card-libro h3 {
-        flex-basis: 6.5rem;
+        flex-basis: 5rem;
     }
 
     #grid-autores .flex-card-autor {
@@ -1017,7 +1038,7 @@ section {
 
 @media (min-width:1920px) {
     #grid-libros .flex-card-libro h3 {
-        flex-basis: 7.5rem;
+        flex-basis: 7rem;
     }
 
     #grid-autores .flex-card-autor {
