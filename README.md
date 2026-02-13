@@ -9,19 +9,18 @@ Proyecto web responsive desarrollado como ejercicio de maquetación avanzada uti
 1. **Objetivo de la web**
 
    **Existe para** :
-
    - Enseñar y reflejar los libros y sus autores en la web.
    - Con el formulario de contacto, conseguir contactos de autores(proveedores) y de distribuidores (clientes).
    - Mostrar nuestro desarrollo de la actividad.
    - Informar de que va nuestro negocio en la editorial.
-2. **Público objetivo (target)**
 
+2. **Público objetivo (target)**
    - Hombres y mujeres de todos las edades y etnias, que quieran disfrutar de la lectura.
    - Acceso por ordenador y móvil
+
 3. Análisis de la competencia
 
    Webs similares:
-
    - https://www.penguinrandomhousegrupoeditorial.com/
    - https://www.planetadelibros.com/editoriales
    - https://www.albaeditorial.es/
@@ -32,31 +31,30 @@ Proyecto web responsive desarrollado como ejercicio de maquetación avanzada uti
    - https://editorialgg.com/
    - https://www.siruela.com/
    - https://www.bloomsbury.com/us/
+
 4. Propuesta de valor
 
    Responde a esto:
 
    > Por la buena visibilidad y armonía.
-   >
 
    Puede ser:
-
    - Más rápido y cercano.
-5. Contenido y estructura
 
+5. Contenido y estructura
    - Secciones que tendrá la web quienes somos (Presentación), catalogo, autores, política de privacidad de datos y una pagina para cada libro en cartera.
    - En cada página se repite el header, el menú nav y el footer.
    - La pagina de inicio es una breve presentación de Editoline, además tiene una vista de los autores y de sus libros; asi como datos de la dirección física de la empresa y un formulario de contacto.
    - Catálogo: la recomendación de la semana y el catálogo completo de libros.
    - Nuestro catálogo en el index es una grilla de fichas que incluye una imagen, su titulo. La imagen nos lleva al libro deseado donde se profundiza un poco mas sobre el libro y su autor.
    - Cada página de un libro, tiene una reseña notable y la reseña breve del autor.
-   - Nuestros Autores: en el index  es una grilla de fichas que incluye una imagen y  su nombre. La imagen que nos lleva  al autor deseado/a en la página Autores. También tiene un enlace que lleva a la página Autores.
+   - Nuestros Autores: en el index es una grilla de fichas que incluye una imagen y su nombre. La imagen que nos lleva al autor deseado/a en la página Autores. También tiene un enlace que lleva a la página Autores.
    - Autores : Todos los autores, con una breve reseña y enlaces a sus respectivos libros.
    - En el pie esta la política de privacidad de datos y ewnlaces a las redes sociales de Editoline.
+
 6. Aspectos técnicos básicos
 
    A nivel simple:
-
    - Una web corporativa, que busca mostrar al público en general los nuevos escritores y sus obras.
    - ¿Con qué tecnología o CMS? Usamos HTML5, CSS3 trabajando sobre el IDE Visual Studio Code.
 
@@ -97,7 +95,8 @@ El objetivo del proyecto es consolidar la capacidad de maquetación profesional 
   - Scroll Snap
   - Transiciones
   - Transformaciones
-- Git y GitHub para control de versiones
+- GitHub link:
+  https://github.com/FCS-dev/editoline-web.git
 
 ---
 
@@ -122,10 +121,10 @@ Breve explicación de la organización:
 - `index.html`: estructura principal del documento.
 - head: Tenemos bien cargadas las fuentes, y bien enlazado el CSS, nuestras media queries funcionarán perfecto en móvil
 - Body:
-
   - Header: Define claramente la cabecera del sitio, tiene un h1 (perfecto para SEO), incluye logo + nombre bien agrupados, usa `<nav>` con lista semántica correcta, está preparado para Flexbox y responsive con tu CSS, cambiará de columna a fila según los media queries
   - Main: HTML muy bien organizado, uso correcto de main, section, article, figure. Perfecto para el CSS responsive, estructura clara de catálogo y recomendado
   - Footer: Lo usa correctamente, contiene info legal y de autoría, tiene navegación de redes con `<nav>`, es accesible (aria-label + title en SVG), está listo para Flexbox / responsive, es profesional y limpio
+
 - `css/`: styles.css.
 - - Inicialización: Estoy creando un sistema de diseño con tipos de letra centralizados, tamaños escalables, colores coherentes, espaciados controlados y base responsive desde el principio. Define el estilo base de toda la web, centraliza el contenido en pantallas grandes, usa una tipografía fluida con `clamp(), `crea una jerarquía clara entre h1, h2, h3, Se adapta bien a móvil, tablet y escritorio
   - En los botones: El cambio de color de fondo tendrá una animación **suave y animado** , no instantáneo.
@@ -217,11 +216,20 @@ Año: 2026
 
 ## Capturas de pantalla.
 
-![Presentacion](imgs/screenshots/screenshot-editoline-web_index.png)
-![Catalogo](imgs/screenshots/screenshot-editoline-web_catalogo.png)
-![Autores](imgs/screenshots/screenshot-editoline-web_autores.png)
-![Libro muestra](imgs/screenshots/screenshot-editoline-web_catedra-sangre-y-estrellas.png)
-![Politicas](imgs/screenshots/screenshot-editoline-web_politica.png)
+index.html
+![Presentacion](imgs/screenshots/screenshot-editoline-web_index.jpg)
+
+catalogo.html
+![Catalogo](imgs/screenshots/screenshot-editoline-web_catalogo.jpg)
+
+autores.html
+![Autores](imgs/screenshots/screenshot-editoline-web_autores.jpg)
+
+{libro}.html
+![Libro muestra](imgs/screenshots/screenshot-editoline-web_catedra-sangre-y-estrellas.jpg)
+
+politica.html
+![Politicas](imgs/screenshots/screenshot-editoline-web_politica.jpg)
 
 ## 📊 Validación
 
